@@ -5,18 +5,27 @@ html(lang="ko")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title SCUP
-        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+        link(rel="stylesheet", href="/views/style.css")
     body 
         header
             h1 SCUP
+            
         main
-            form#nick
-                input(type="text", placeholder="choose a nickname")
-                button Save
-            ul
-            form#message
-                input(type="text", placeholder="write a msg")
-                button Send
-        //- script(src="/socket.io/socket.io.js") 
+            div#welcome
+                form
+                    input(placeholder="room name", required, type="text")
+                    button Enter Room
+                h4 Open Rooms
+                ul
+            div#room
+                h3 
+                ul
+                form#name
+                    input(type="text", required, placeholder="nickname")
+                    button Save
+                form#msg
+                    input(type="text", required, placeholder="message")
+                    button Send
+        script(src="/socket.io/socket.io.js") 
         script(src="/public/js/app.js") 
         
